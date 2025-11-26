@@ -33,7 +33,5 @@
 ### 2. 데이터셋 (Datasets)
 
 #### BDD100K
-
-+ 카테고리
-  + Daytime & clear한 이미지 10,000장
++ Daytime & clear한 이미지 10,000장
 
