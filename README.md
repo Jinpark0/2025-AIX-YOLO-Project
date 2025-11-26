@@ -59,4 +59,44 @@ Real vs Synthetic Weather Augmentation: A Comparative Study for Robust Object De
 
 ## Data Split Strategy
 Training Sets
+
+## Group 1 : Pure baseline
+- Clear & Daytime : 10,000장
+
+## Group 2 : Real diverse data
+- Clear & Daytime : 5,000장
+- rainy :
+- night :
+- foggy :
+- snowy :
+= 총 10,000장
+
+## Group 3 : Synthetic augmentation
+- Clear & Daytime : 5,000장
+- 실시간 augmentation 적용 : 5,000장
+
+## Validation set
+- Clear & Daytime :
+- rainy :
+- night :
+- foggy :
+- snowy :
+- 총 :
+
+## Test set
+- Clear & Daytime :
+- rainy :
+- night :
+- foggy :
+- snowy :
+- 총 :
+
+---
+
+### 3. 방법론 (Methodology)
+
+#### 모델 구조
+  + YOLOv11 Nano
+  + 선택 이유 :
+      + 경량 모델로 빠른 실험 가ㄴ
   
