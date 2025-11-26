@@ -28,7 +28,7 @@ Real vs Synthetic Weather Augmentation: A Comparative Study for Robust Object De
 
 1. 정량적 성능 비교
   + 3가지 학습 전략 (Pure baseline, Real diverse data, Synthetic augmentation)의 mAP 비교
-  + 각 기상 조건별 테스트셋(daytime&clear, rain, snow, fog, night)에서의 성능 분석
+  + 각 기상 조건별 테스트셋(clear, rain, snow, fog, night)에서의 성능 분석
 
 2. Weather-specific insight
   + 어떤 날씨 조건에서 synthetic augmentation이 효과적인가?
@@ -54,7 +54,7 @@ Real vs Synthetic Weather Augmentation: A Comparative Study for Robust Object De
 + Rainy
 + Snowy
 + Foggy
-+ Daytime
++ Day
 + Night
 
 # Data Split Strategy
@@ -62,10 +62,10 @@ Real vs Synthetic Weather Augmentation: A Comparative Study for Robust Object De
 ## Training Sets
 
 ### Group 1 : Pure baseline
-- Clear & Daytime : 10,000장
+- Day & Clear : 10,000장
 
 ### Group 2 : Real diverse data
-- Clear & Daytime : 5,000장
+- Day & C : 5,000장
 - rainy :
 - night :
 - foggy :
