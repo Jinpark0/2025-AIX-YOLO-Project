@@ -57,13 +57,14 @@ Real vs Synthetic Weather Augmentation: A Comparative Study for Robust Object De
 + Daytime
 + Night
 
-## Data Split Strategy
-Training Sets
+# Data Split Strategy
 
-## Group 1 : Pure baseline
+## Training Sets
+
+### Group 1 : Pure baseline
 - Clear & Daytime : 10,000장
 
-## Group 2 : Real diverse data
+### Group 2 : Real diverse data
 - Clear & Daytime : 5,000장
 - rainy :
 - night :
@@ -71,7 +72,7 @@ Training Sets
 - snowy :
 = 총 10,000장
 
-## Group 3 : Synthetic augmentation
+### Group 3 : Synthetic augmentation
 - Clear & Daytime : 5,000장
 - 실시간 augmentation 적용 : 5,000장
 
