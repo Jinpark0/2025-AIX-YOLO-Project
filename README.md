@@ -21,6 +21,7 @@ Real vs Synthetic Weather Augmentation: A Comparative Study for Robust Object De
 이 문제를 해결하기 위한 두 가지 접근법이 있습니다.
 1. 실제 다양한 기상 조건의 데이터를 수집하여 학습 - 비용과 시간이 많이 소요됨
 2. Synthetic weather augmentation을 적용하여 학습 - 저비용이지만 실제 데이터와의 차이 존재
+
 본 연구는 BDD100K 데이터셋을 활용하여 이 두 접근법을 정량적으로 비교함으로써, 제한된 예산과 시간 내에서 robust한 객체 검출 모델을 개발하기 위한 실질적인 가이드라인을 제시하고자 합니다.
 
 #### What do you want to see at the end?
