@@ -15,7 +15,7 @@ Real vs Synthetic Weather Augmentation: A Comparative Study for Robust Object De
 
 ### 1. 제안 (Proposal)
 
-#### Motivation : Why are you doing this?
+### Motivation : Why are you doing this?
 
 자율주행 시스템은 다양한 기상 조건(맑음, 비, 눈, 안개)과 시간대(주간, 야간)에서 안정적으로 작동해야 합니다. 하지만 실제로는 특정 조건에서만 학습된 객체 검출 모델이 다른 환경에서 성능이 크게 저하되는 domain shift 문제가 발생합니다.
 이 문제를 해결하기 위한 두 가지 접근법이 있습니다.
@@ -24,7 +24,7 @@ Real vs Synthetic Weather Augmentation: A Comparative Study for Robust Object De
 
 본 연구는 BDD100K 데이터셋을 활용하여 이 두 접근법을 정량적으로 비교함으로써, 제한된 예산과 시간 내에서 robust한 객체 검출 모델을 개발하기 위한 실질적인 가이드라인을 제시하고자 합니다.
 
-#### What do you want to see at the end?
+### What do you want to see at the end?
 
 1. 정량적 성능 비교
   + 3가지 학습 전략 (Pure baseline, Real diverse data, Synthetic augmentation)의 mAP 비교
