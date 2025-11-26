@@ -35,5 +35,5 @@
 #### BDD100K
 
 + 카테고리
-        + Daytime & clear한 이미지 10,000장
+  + Daytime & clear한 이미지 10,000장
 
