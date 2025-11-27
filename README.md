@@ -13,7 +13,7 @@ Addressing class imbalance in weather conditions for autonomous driving object d
 
 ---
 
-### 1. 제안 (Proposal)
+# 1. 제안 (Proposal)
 
 ### Motivation : Why are you doing this?
 
@@ -37,7 +37,7 @@ Addressing class imbalance in weather conditions for autonomous driving object d
  
 ---
 
-### 2. 데이터셋 (Datasets)
+# 2. 데이터셋 (Datasets)
 
 ## Overview
 + 데이터셋명: BDD100K (Berkeley DeepDrive 100K)
