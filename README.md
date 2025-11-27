@@ -9,7 +9,7 @@
 
 ---
 ## Title: 
-Real vs Synthetic Weather Augmentation: A Comparative Study for Robust Object Detection in Autonomous Driving
+Addressing class imbalance in weather conditions for autonomous driving object detection : A comparative study of data balancing strategies
 
 ---
 
@@ -17,21 +17,23 @@ Real vs Synthetic Weather Augmentation: A Comparative Study for Robust Object De
 
 ### Motivation : Why are you doing this?
 
-자율주행 시스템은 다양한 기상 조건(맑음, 비, 눈, 안개)과 시간대(주간, 야간)에서 안정적으로 작동해야 합니다. 하지만 실제로는 특정 조건에서만 학습된 객체 검출 모델이 다른 환경에서 성능이 크게 저하되는 domain shift 문제가 발생합니다.
-이 문제를 해결하기 위한 두 가지 접근법이 있습니다.
-1. 실제 다양한 기상 조건의 데이터를 수집하여 학습 - 비용과 시간이 많이 소요됨
-2. Synthetic weather augmentation을 적용하여 학습 - 저비용이지만 실제 데이터와의 차이 존재
+자율주행 시스템의 객체 검출 성능은 학습 데이터의 분포에 크게 영향을 받습니다. 특히 BDD100K와 같은 대규모 자율주행 데이터셋은 날씨와 시간대에 따른 심각한 클래스 불균형 문제를 가지고 있습니다.
 
-본 연구는 BDD100K 데이터셋을 활용하여 이 두 접근법을 정량적으로 비교함으로써, 제한된 예산과 시간 내에서 robust한 객체 검출 모델을 개발하기 위한 실질적인 가이드라인을 제시하고자 합니다.
+핵심 문제:
++ Clear 조건의 데이터가 전체의 약 75%를 차지
++ Adverse weather(비,눈) 조건은 각각 10% 미만
+
+연구 질문:
+1. 데이터 불균형이 날씨 조건별 검출 성능에 얼마나 영향을 미치는가?
+2. Real balanced data vs Synthetic augmentation의 성능 차이는?
 
 ### What do you want to see at the end?
 
-1. 정량적 성능 비교
-  + 3가지 학습 전략 (Pure baseline, Real diverse data, Synthetic augmentation)의 mAP 비교
-  + 각 기상 조건별 테스트셋(clear, rain, snow, fog, night)에서의 성능 분석
++ 정량적 분석
+  + 6개 날씨 조건별 mAP 비교 (Day/Night x Clear/Rain/Snow)
+  + 불균형 데이터의 성능 저하 정도 측정
+  + Augmentation의 효과 정량화
 
-2. Weather-specific insight
-  + 어떤 날씨 조건에서 synthetic augmentation이 효과적인가?
  
 ---
 
@@ -57,40 +59,30 @@ Real vs Synthetic Weather Augmentation: A Comparative Study for Robust Object De
 + Day
 + Night
 
-# Data Split Strategy
+## Train set 분포 분석
+- Clear : 74.8%
+- Adverse weather : 25.2%
 
-## Training Sets
+## 데이터 구성 
+### Group 1 : Real Imbalanced (18,000장)
 
-### Group 1 : Pure baseline
-- Day & Clear : 10,000장
+day-clear: 5,400
+day-rain : 900
+day-snow : 900
+night-clear : 9,000
+night-rain : 900
+night-snow : 900
 
-### Group 2 : Real diverse data
-- Day & C : 5,000장
-- rainy :
-- night :
-- foggy :
-- snowy :
-= 총 10,000장
+### Group 2 : Real Balanced (18,000장)
 
-### Group 3 : Synthetic augmentation
-- Clear & Daytime : 5,000장
-- 실시간 augmentation 적용 : 5,000장
+각 카테고리 별 3,000장씩
 
-## Validation set
-- Clear & Daytime :
-- rainy :
-- night :
-- foggy :
-- snowy :
-- 총 :
+### Group 3 : Imbalanced + Augmentation (18,000장)
 
-## Test set
-- Clear & Daytime :
-- rainy :
-- night :
-- foggy :
-- snowy :
-- 총 :
+Baase data : Group 1과 동일
++ Albumentations weather augmentation (p=0.6)
+  - RandomRain
+  - RandomSnow
 
 ---
 
