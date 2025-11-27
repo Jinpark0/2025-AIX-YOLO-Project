@@ -66,21 +66,21 @@ Addressing class imbalance in weather conditions for autonomous driving object d
 ## 데이터 구성 
 ### Group 1 : Real Imbalanced (18,000장)
 
-day-clear: 5,400
++ day-clear: 5,400
 
-day-rain : 900
++ day-rain : 900
 
-day-snow : 900
++ day-snow : 900
 
-night-clear : 9,000
++ night-clear : 9,000
 
-night-rain : 900
++ night-rain : 900
 
-night-snow : 900
++ night-snow : 900
 
 ### Group 2 : Real Balanced (18,000장)
 
-각 카테고리 별 3,000장씩
++ 각 조건 별 3,000장씩
 
 ### Group 3 : Imbalanced + Augmentation (18,000장)
 
