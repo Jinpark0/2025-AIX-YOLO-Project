@@ -100,10 +100,35 @@ Baase data : Group 1과 동일
 
 ---
 
-### 3. 방법론 (Methodology)
+# 3. 방법론 (Methodology)
 
-#### 모델 구조
+### 모델 구조
   + YOLOv11 Nano
   + 선택 이유 :
-      + 경량 모델로 빠른 실험 가ㄴ
-  
+      + 경량 모델로 빠른 실험 가능
+   
+### Data Augmentation
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/c0ea5d58-f042-477e-816f-ed29b8944652" width="400" />
+      <br><b>day-rain<br/>RandomRain</b>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/d66b0559-b12b-4a10-a22a-4d12ffa4db20" width="400" />
+      <br><b>night-rain<br/>RandomRain</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/a746a969-3d13-4336-9d5f-e78048454ee8" width="400" />
+      <br><b>day-snow<br/>RandomSnow</b>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/b4ee22b8-72db-4c05-9490-461809a0afb6" width="400" />
+      <br><b>night-snow<br/>RandomSnow</b>
+    </td>
+  </
+
+
