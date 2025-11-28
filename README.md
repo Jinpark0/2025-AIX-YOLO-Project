@@ -89,6 +89,15 @@ Baase data : Group 1과 동일
   - RandomRain
   - RandomSnow
 
+### Group 4 : Balanced + Augmentation (18,000장)
+
++ 각 조건 별 3,000장씩
+  - day-rain : 900 real + 2100 augmentation
+  - day-snow : 900 real + 2100 augmentation
+  - night-rain : 900 real + 2100 augmentation
+  - night-snow : 900 real + 2100 augmentation
+  
+
 ---
 
 ### 3. 방법론 (Methodology)
