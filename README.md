@@ -115,7 +115,6 @@ snow_point_range=[0.3, 0.7],
 method="bleach"
 )
 ```
-
 <table>
   <tr>
     <td align="center">
@@ -136,8 +135,8 @@ method="bleach"
       <img src="https://github.com/user-attachments/assets/b4ee22b8-72db-4c05-9490-461809a0afb6" width="400" />
       <br><b>night-snow<br/>RandomSnow</b>
     </td>
-  </
-
+  <tr>
+<table>
 
 ### 3.3 Training Configuration
 
