@@ -64,38 +64,38 @@ Addressing class imbalance in weather conditions for autonomous driving object d
 - Adverse weather : 25.2%
 
 ## 데이터 구성 
-### Group 1 : Real Imbalanced (18,000장)
+### Group 1 : Real Imbalanced (12,000장)
 
-+ day-clear: 5,400
++ day-clear: 3,600
 
-+ day-rain : 900
++ day-rain : 600
 
-+ day-snow : 900
++ day-snow : 600
 
-+ night-clear : 9,000
++ night-clear : 6,000
 
-+ night-rain : 900
++ night-rain : 600
 
-+ night-snow : 900
++ night-snow : 600
 
-### Group 2 : Real Balanced (18,000장)
+### Group 2 : Real Balanced (12,000장)
 
-+ 각 조건 별 3,000장씩
++ 각 조건 별 2,000장씩
 
-### Group 3 : Imbalanced + Augmentation (18,000장)
+### Group 3 : Imbalanced + Augmentation (12,000장)
 
-Baase data : Group 1과 동일
+Base data : Group 1과 동일
 + Albumentations weather augmentation (p=0.6)
   - RandomRain
   - RandomSnow
 
-### Group 4 : Balanced + Augmentation (18,000장)
+### Group 4 : Balanced + Augmentation (12,000장)
 
-+ 각 조건 별 3,000장씩
-  - day-rain : 900 real + 2100 augmentation
-  - day-snow : 900 real + 2100 augmentation
-  - night-rain : 900 real + 2100 augmentation
-  - night-snow : 900 real + 2100 augmentation
++ 각 조건 별 2,000장씩
+  - day-rain : 600 real + 1400 augmentation
+  - day-snow : 600 real + 1400 augmentation
+  - night-rain : 600 real + 1400 augmentation
+  - night-snow : 600 real + 1400 augmentation
   
 
 ---
