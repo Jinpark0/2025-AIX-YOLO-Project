@@ -63,51 +63,58 @@ Addressing class imbalance in weather conditions for autonomous driving object d
 - Clear : 74.8%
 - Adverse weather : 25.2%
 
-## 데이터 구성 
-### Group 1 : Real Imbalanced (12,000장)
 
-+ day-clear: 3,600
 
-+ day-rain : 600
+## 데이터 구성
 
-+ day-snow : 600
+| Group | 구성 | 총 이미지 수 |
+|-------|------|-------------|
+| **Group 1: Real Imbalanced** | day-clear: 3,600 / day-rain: 600 / day-snow: 600 / night-clear: 6,000 / night-rain: 600 / night-snow: 600 | 12,000장 |
+| **Group 2: Real Balanced** | 각 조건별 2,000장씩 균등 분배 | 12,000장 |
+| **Group 3: Imbalanced + Augmentation** | Group 1 기반 + Albumentations weather augmentation (p=0.6): RandomRain, RandomSnow | 12,000장 |
+| **Group 4: Balanced + Augmentation** | 각 조건별 2,000장 (day-rain: 600 real + 1,400 aug / day-snow: 600 real + 1,400 aug / night-rain: 600 real + 1,400 aug / night-snow: 600 real + 1,400 aug) | 12,000장 |
 
-+ night-clear : 6,000
-
-+ night-rain : 600
-
-+ night-snow : 600
-
-### Group 2 : Real Balanced (12,000장)
-
-+ 각 조건 별 2,000장씩
-
-### Group 3 : Imbalanced + Augmentation (12,000장)
-
-Base data : Group 1과 동일
-+ Albumentations weather augmentation (p=0.6)
-  - RandomRain
-  - RandomSnow
-
-### Group 4 : Balanced + Augmentation (12,000장)
-
-+ 각 조건 별 2,000장씩
-  - day-rain : 600 real + 1400 augmentation
-  - day-snow : 600 real + 1400 augmentation
-  - night-rain : 600 real + 1400 augmentation
-  - night-snow : 600 real + 1400 augmentation
-  
-
----
 
 # 3. 방법론 (Methodology)
 
-### 모델 구조
-  + YOLOv11 Nano
-  + 선택 이유 :
-      + 경량 모델로 빠른 실험 가능
+### 3.1 Model Selection
+
+본 연구에서는 **YOLOv11**을 기본 객체 검출 모델로 선택하였습니다.
+
+**선택 이유:**
+- Real-time 추론이 가능한 one-stage detector
+- 자율주행 환경에서 요구되는 빠른 처리 속도
+- 최신 아키텍처로 baseline 성능 우수
+- Ultralytics 프레임워크를 통한 손쉬운 실험 재현성
+
+**모델 구성:**
+- Backbone: CSPDarknet 기반 feature extractor
+- Neck: PANet (Path Aggregation Network)
+- Head: Decoupled head for classification and regression
+- Input size: 640×640 (원본 1280×720에서 리사이즈)
    
-### Data Augmentation
+### 3.2 Data Augmentation Strategy
+
+**RandomRain Parameter:**
+```python
+RandomRain(
+    slant_range=[-15, 15],
+    drop_length="60",
+    drop_width=1,
+    drop_color=[200, 200, 200],
+    blur_value=7,
+    brightness_coefficient=0.5,
+    rain_type="heavy"
+)
+```
+**RandomSnow Parameter:**
+```python
+RandomSnow(
+brightness_coeff=4,
+snow_point_range=[0.3, 0.7],
+method="bleach"
+)
+```
 
 <table>
   <tr>
@@ -130,5 +137,21 @@ Base data : Group 1과 동일
       <br><b>night-snow<br/>RandomSnow</b>
     </td>
   </
+
+### 3.3 Training Configuration
+
+| Parameter | Value |
+|-----------|-------|
+| Epochs | 100 |
+| Batch size | 16 |
+| Optimizer | AdamW |
+| Learning rate | 0.001 (with cosine annealing) |
+| Weight decay | 0.0005 |
+| Image size | 640×640 |
+| Warmup epochs | 3 |
+
+**학습 환경:**
+- GPU: NVIDIA RTX 4090 (24GB)
+- Framework: PyTorch 2.0 + Ultralytics
 
 
