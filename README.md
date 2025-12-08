@@ -382,7 +382,7 @@ Real balanced data가 synthetic augmentation보다 일관되게 우수한 성능
 
 ### 학술적 기여
 
-1. 환경 조건별 도메인인 불균형 문제에 대한 체계적 실험 설계 제시
+1. 환경 조건별 도메인 불균형 문제에 대한 체계적 실험 설계 제시
 2. Real data와 synthetic augmentation의 정량적 비교 근거 제공
 3. 단순 Weather augmentation의 한계점 실증적 확인
 
