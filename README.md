@@ -24,7 +24,7 @@ Addressing class imbalance in weather conditions for autonomous driving object d
 + Adverse weather(비,눈) 조건은 각각 10% 미만
 
 연구 질문:
-1. 데이터 불균형이 날씨 조건별 검출 성능에 얼마나 영향을 미치는가?
+1. 도메인 불균형(날씨 조건별)이 객체 검출 성능에 얼마나 영향을 미치는가?
 2. Real balanced data vs Synthetic augmentation의 성능 차이는?
 
 ### What do you want to see at the end?
