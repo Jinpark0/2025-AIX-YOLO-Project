@@ -25,7 +25,7 @@ os.makedirs(output_label_dir, exist_ok=True)
 # ==============================
 
 # "rain", "snow", 또는 None (복사만)
-aug_type = None   
+aug_type = "snow"   
 
 n_aug_per_image = 2.3     # aug_type이 None일 때는 무시됨
 

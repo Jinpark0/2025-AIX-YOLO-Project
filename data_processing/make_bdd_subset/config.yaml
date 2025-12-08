@@ -1,6 +1,6 @@
 paths:
-  images_root: "../bdd100k_images_100k/100k"
-  labels_root: "../bdd100k_labels/100k"
+  images_root: "../../bdd100k_images_100k/100k"
+  labels_root: "../../bdd100k_labels/100k"
   # 이 폴더 아래에 version01, version02 ... 식으로 계속 생성됨
   output_root: "../bdd_to_yolo/bdd100k_subset_filtered"
 
