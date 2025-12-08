@@ -356,7 +356,7 @@ Night 조건에서의 성능 저하는 저조도 환경에서의 객체 검출�
 
 **주요 발견:**
 
-1. **Real Balanced 데이터가 가장 효과적**: 균등하게 분배된 실제 데이터(Group 2)가 평균 mAP50 0.434로 최고 성능을 달성하였다. 이는 불균형 데이터(Group 1) 대비 1.9% 향상된 수치이다.
+1. **Yolov11n의 Robustness**: 균등하게 분배된 실제 데이터(Group 2)가 평균 mAP50 0.434로 최고 성능을 달성하였다. 이는 불균형 데이터(Group 1) 대비 1.9% 향상된 수치이다. 하지만 이 수치는 유의미한 차이를 보이지 않으므로 학습 모델은 domain shift에 robust하다는 것을 알 수있다.
 
 2. **Synthetic Augmentation의 한계**: Albumentations의 weather augmentation은 오히려 성능을 저하시켰다. 이는 합성 날씨 효과가 실제 날씨 패턴의 복잡성을 충분히 모사하지 못함을 시사한다.
 
