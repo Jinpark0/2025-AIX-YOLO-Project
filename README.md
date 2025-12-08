@@ -81,7 +81,7 @@ Addressing domain imbalance in weather conditions for autonomous driving object 
 ### BDD100K 데이터셋 다운로드
 + 공식 다운로드 링크
   + http://bdd-data.berkeley.edu/download.html
-<img width="600" src="https://github.com/user-attachments/assets/a101e81c-80c8-4474-9c47-fa2862b275ae" />
+  <img width="600" src="https://github.com/user-attachments/assets/a101e81c-80c8-4474-9c47-fa2862b275ae" />
 
 + BDD-100K 페이지에서 **100K Images**, **Labels**를 다운로드합니다.
 
@@ -141,11 +141,11 @@ python3 converter.py
 + 변환이 완료된 YOLO 데이터셋을 읽어와 증강을 수행하며, 이미지와 라벨을 학습에 바로 사용할 수 있는 구조로 자동 저장합니다.
 + 설정 변경
   + make_aug_image_4.py 파일을 열어 다음 옵션을 수정하여 증강 모드를 설정할 수 있습니다.
-  ```python
-    # 옵션 예시
-    aug_type = "rain"      # "rain", "snow", 또는 None (단순 복사)
-    n_aug_per_image = 2.3  # 이미지당 생성할 증강 개수 (기본 2장 + 30% 확률로 1장 추가)
-    ```
+    ```python
+      # 옵션 예시
+      aug_type = "rain"      # "rain", "snow", 또는 None (단순 복사)
+      n_aug_per_image = 2.3  # 이미지당 생성할 증강 개수 (기본 2장 + 30% 확률로 1장 추가)
+      ```
 + 증강 스크립트 실행
   ```bash
   python3 make_aug_image_4.py
@@ -237,6 +237,17 @@ method="bleach"
 **학습 환경:**
 - GPU: NVIDIA RTX 5060 (8GB)
 - Framework: PyTorch 2.0 + Ultralytics
+
+### 3.4 Train
++ 다음과 같이 실행합니다.
+  + Group 1, Group 2, Group 4
+    ```
+    python3 yolo_noaug_train.py
+    ```
+  + Group 2
+    ```
+    python3 yolo_aug_train.py
+    ```
 
 # 4. Evaluation & Analysis
 
