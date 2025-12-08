@@ -298,7 +298,6 @@ Night 조건에서의 성능 저하는 저조도 환경에서의 객체 검출�
 | Real data > Synthetic augmentation | Group 1,2 > Group 3,4 (전 조건) |
 | Weather augmentation이 오히려 성능 저하 | Aug 적용 시 평균 5~10% 하락 |
 | Balanced + Aug가 최악의 조합 | Group 4 평균 mAP50 0.389 (최저) |
-| Night 조건은 본질적으로 어려움 | 모든 그룹에서 night < day |
 
 ---
 
