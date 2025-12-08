@@ -370,7 +370,7 @@ Night 조건에서의 성능 저하는 저조도 환경에서의 객체 검출�
 
 ### RQ2: Real balanced data vs Synthetic augmentation의 성능 차이는?
 
-Real balanced data가 synthetic augmentation보다 일관되게 우수한 성능을 보였다. Group 2(Real Balanced)는 Group 4(Balanced + Aug)보다 평균 11.6% 높은 mAP50을 달성하였다. 실험에 사용된 합성 데이터는 실제 데이터와의 괴리가 있으므로 학습에 이용하기 힘들다는 것을 알 수 있다.
+Real balanced data가 synthetic augmentation보다 일관되게 우수한 성능을 보였다. Group 2(Real Balanced)는 Group 4(Balanced + Aug)보다 평균 11.6% 높은 mAP50을 달성하였다. 단순 합성 데이터는 실제 데이터와의 괴리가 있으므로 학습에 이용하기 힘들다는 것을 알 수 있다.
 
 ## 6.3 Implications
 
@@ -384,7 +384,7 @@ Real balanced data가 synthetic augmentation보다 일관되게 우수한 성능
 
 1. 환경 조건별 도메인인 불균형 문제에 대한 체계적 실험 설계 제시
 2. Real data와 synthetic augmentation의 정량적 비교 근거 제공
-3. Weather augmentation의 한계점 실증적 확인
+3. 단순 Weather augmentation의 한계점 실증적 확인
 
 ## 6.4 Limitations
 
