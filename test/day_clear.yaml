@@ -1,0 +1,24 @@
+path: ../image_for_test/
+train: day_clear/images/test
+val: day_clear/images/test
+test: day_clear/images/test
+names:
+  0: area/unknown
+  1: bike
+  2: bus
+  3: car
+  4: lane/crosswalk
+  5: lane/double other
+  6: lane/double white
+  7: lane/double yellow
+  8: lane/road curb
+  9: lane/single other
+  10: lane/single white
+  11: lane/single yellow
+  12: motor
+  13: person
+  14: rider
+  15: traffic light
+  16: traffic sign
+  17: train
+  18: truck
