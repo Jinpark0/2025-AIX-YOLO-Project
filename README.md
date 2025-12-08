@@ -76,19 +76,24 @@ Addressing domain imbalance in weather conditions for autonomous driving object 
 
 
 ## 데이터 전처리
-+ 아래는 BDD100K 데이터셋을 YOLOv11 모델 형태에 맞게 변환하는 과정입니다.
++ 아래는 BDD100K 데이터셋을 YOLOv11n 모델 형태에 맞게 변환하는 과정입니다.
   
-### 데이터셋 다운로드
+### BDD100K 데이터셋 다운로드
++ 공식 다운로드 링크
+  + http://bdd-data.berkeley.edu/download.html
 <img width="600" src="https://github.com/user-attachments/assets/a101e81c-80c8-4474-9c47-fa2862b275ae" />
+
 + BDD-100K 페이지에서 **100K Images**, **Labels**를 다운로드합니다.
 
 ### YOLO 학습을 위한 Dataset 구조 만들기
 <img width="550" src="https://github.com/user-attachments/assets/774dcd85-18a2-4b44-8e94-014c474b0d11" />
+
 + BDD100K는 JSON 파일 형태 기반이므로, YOLO 라벨(txt) 형식으로의 변환이 필요합니다.
   ```
   class x_center y_center width height
   ```
 <img width="500" src="https://github.com/user-attachments/assets/a3ac8eae-9235-410d-a504-20540278a70b" />
+
 
 ### 개발 환경 설정
 + 가상환경 생성
@@ -123,8 +128,9 @@ python3 converter.py
   python3 viz_yolo_labels.py
   ```
   + `yolo_viz/` 폴더가 생성됩니다.
-    <img width="600" src="https://github.com/user-attachments/assets/01a175e7-33d6-4978-909b-9f3d2825b1d9" />
-    <img width="600" src="https://github.com/user-attachments/assets/be31c1f9-a7cf-4cd7-8d7b-b147ca044204" />
+  
+<img width="600" src="https://github.com/user-attachments/assets/01a175e7-33d6-4978-909b-9f3d2825b1d9" />
+<img width="600" src="https://github.com/user-attachments/assets/be31c1f9-a7cf-4cd7-8d7b-b147ca044204" />
     
 ### Data Augmentation (Group 4)
 + 변환이 완료된 YOLO 데이터셋을 읽어와 증강을 수행하며, 이미지와 라벨을 학습에 바로 사용할 수 있는 구조로 자동 저장합니다.
