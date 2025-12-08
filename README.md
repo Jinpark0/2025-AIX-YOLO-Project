@@ -9,7 +9,7 @@
 
 ---
 ## Title: 
-Addressing class imbalance in weather conditions for autonomous driving object detection : A comparative study of data balancing strategies
+Addressing domain imbalance in weather conditions for autonomous driving object detection : A comparative study of data balancing strategies
 
 ---
 
