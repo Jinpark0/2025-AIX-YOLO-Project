@@ -329,7 +329,7 @@ Night 조건에서의 성능 저하는 저조도 환경에서의 객체 검출�
 - Mosaic augmentation (YOLOv4+)
 
 ### Weather-specific Augmentation
-- **Albumentations Library**: RandomRain, RandomSnow, RandomFog 등 날씨 효과 합성
+- **Albumentations Library**: RandomRain, RandomSnow 날씨 효과 합성
 - **Domain Randomization**: 합성 데이터를 통한 모델 일반화
 
 ### 참고 라이브러리
