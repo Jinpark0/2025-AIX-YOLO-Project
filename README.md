@@ -493,3 +493,12 @@ Real balanced data가 synthetic augmentation보다 일관되게 우수한 성능
 ## 6.6 Final Remarks
 
 본 연구는 자율주행 객체 검출에서 도메인 불균형 문제의 중요성을 확인하고, 이를 해결하기 위한 전략들의 효과를 실증적으로 비교하였다. 연구 결과, **실제 균형 데이터의 확보**가 합성 데이터를 통한 augmentation보다 효과적이며, 단순 weather augmentation은 오히려 성능 저하를 유발할 수 있음을 발견하였다. 이는 자율주행 시스템의 안전성 확보를 위해 다양한 환경 조건에서의 실제 데이터 수집이 필수적임을 시사한다.
+
+## 6.7 Contributors
+
+박지홍 : Albumentations parameter 분석, table 분석 후 보고서 작성
+심승환 : 데이터 전처리, 데이터 학습 및 테스트, 결과 보고
+최다예 : 코드 작성, Youtube recording, 보고서 검토
+
+## 6.8 Youtube link
+
