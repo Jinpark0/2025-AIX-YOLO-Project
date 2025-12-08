@@ -85,10 +85,15 @@ Addressing domain imbalance in weather conditions for autonomous driving object 
 
 + BDD-100K 페이지에서 **100K Images**, **Labels**를 다운로드합니다.
 
+**주의사항**
+10K Images에는라벨 누락 이미지가 많아 학습 오류가 발생합니다.
+따라서 **100K Images + Labels 다운로드를 권장**합니다.
+
 ### YOLO 학습을 위한 Dataset 구조 만들기
 <img width="550" src="https://github.com/user-attachments/assets/774dcd85-18a2-4b44-8e94-014c474b0d11" />
 
 + BDD100K는 JSON 파일 형태 기반이므로, YOLO 라벨(txt) 형식으로의 변환이 필요합니다.
++ YOLO 라벨 형식은 다음과 같습니다:
   ```
   class x_center y_center width height
   ```
@@ -101,12 +106,12 @@ Addressing domain imbalance in weather conditions for autonomous driving object 
   python3 -m venv venv
   source venv/bin/activate
   ```
-+ 의존성 설피
++ 의존성 설치
   ```bash
   pip install -r requirements.txt
   ```
 
-### 데이터 필터링 (Subset 설정)
+### 데이터 필터링 (Subset 생성성)
 + config.yaml 기반으로 목적에 맞는 데이터만 필터링합니다.
   + config.yaml 파일을 수정
     ```bash
@@ -154,11 +159,7 @@ python3 converter.py
     ```
     
 
-YOLO 라벨 형식은 다음과 같습니다:
 
-**주의사항**
-10K Images에는라벨 누락 이미지가 많아 학습 오류가 발생합니다.
-따라서 **100K Images + Labels 다운로드를 권장**합니다.
 
 
 
