@@ -230,9 +230,11 @@ method="bleach"
 
 ## 4.2 Analysis
 
-### 4.2.1 Real Balanced Data의 우수성
+### 4.2.1 Yolov11n 모델의 robustness 
 
-Real Balanced (Group 2)가 평균 mAP50 0.434로 가장 높은 성능을 기록하였습니다. 이는 Real Imbalanced (Group 1)의 0.426 대비 **1.9% 향상**된 수치입니다.
+Real Balanced (Group 2)가 평균 mAP50 0.434로 가장 높은 성능을 기록하였습니다. 이는 Real Imbalanced (Group 1)의 0.426 대비 **1.9% 향상**된 수치입니다. 하지만 이 수치는 유의미한 차이를 보이지 않으며, 학습한 모델이 domain shift에 robust함을 나타냅니다.
+
+다음은 조건별 성능 향상 분석입니다.
 
 **조건별 성능 향상 분석:**
 - day_clear: +3.5% (0.457 → 0.473)
@@ -240,7 +242,7 @@ Real Balanced (Group 2)가 평균 mAP50 0.434로 가장 높은 성능을 기록�
 - day_snow: +5.5% (0.433 → 0.457)
 - night_clear: 0.0% (0.372 → 0.372)
 
-특히 adverse weather 조건(rain, snow)에서 balanced 데이터의 효과가 더 크게 나타났습니다. 이는 소수 클래스의 데이터를 충분히 확보하는 것이 해당 조건에서의 검출 성능 향상에 직접적인 영향을 미친다는 것을 시사합니다.
+adverse weather 조건(rain, snow)에서 balanced 데이터의 효과가 크게 나타났습니다. 이는 소수 클래스의 데이터를 충분히 확보하는 것이 해당 조건에서의 검출 성능 향상에 직접적인 영향을 미친다는 것을 시사합니다.
 
 ### 4.2.2 Synthetic Augmentation의 부정적 효과
 
