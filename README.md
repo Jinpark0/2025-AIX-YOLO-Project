@@ -75,6 +75,87 @@ Addressing domain imbalance in weather conditions for autonomous driving object 
 | **Group 4: Balanced + Augmentation** | 각 조건별 2,000장 (day-rain: 600 real + 1,400 aug / day-snow: 600 real + 1,400 aug / night-rain: 600 real + 1,400 aug / night-snow: 600 real + 1,400 aug) | 12,000장 |
 
 
+## 데이터 전처리
++ 아래는 BDD100K 데이터셋을 YOLOv11 모델 형태에 맞게 변환하는 과정입니다.
+  
+### 데이터셋 다운로드
+<img width="600" src="https://github.com/user-attachments/assets/a101e81c-80c8-4474-9c47-fa2862b275ae" />
++ BDD-100K 페이지에서 **100K Images**, **Labels**를 다운로드합니다.
+
+### YOLO 학습을 위한 Dataset 구조 만들기
+<img width="550" src="https://github.com/user-attachments/assets/774dcd85-18a2-4b44-8e94-014c474b0d11" />
++ BDD100K는 JSON 파일 형태 기반이므로, YOLO 라벨(txt) 형식으로의 변환이 필요합니다.
+  ```
+  class x_center y_center width height
+  ```
+<img width="500" src="https://github.com/user-attachments/assets/a3ac8eae-9235-410d-a504-20540278a70b" />
+
+### 개발 환경 설정
++ 가상환경 생성
+  ```bash
+  python3 -m venv venv
+  source venv/bin/activate
+  ```
++ 의존성 설피
+  ```bash
+  pip install -r requirements.txt
+  ```
+
+### 데이터 필터링 (Subset 설정)
++ config.yaml 기반으로 목적에 맞는 데이터만 필터링합니다.
+  + config.yaml 파일을 수정
+    ```bash
+    python3 make_bdd_subset.py --config config.yaml
+    ```
+  + 출력 경로
+    ```
+    bdd_to_yolo/bdd100k_subset_filtered/
+    ```
+### BBD100K → YOLO 포맷 변환
+```bash
+cd bdd_to_yolo
+python3 converter.py
+```
+
+### YOLO 라벨 시각화 (옵션)
++ convert 과정 확인
+  ```bash
+  python3 viz_yolo_labels.py
+  ```
+  + `yolo_viz/` 폴더가 생성됩니다.
+    <img width="600" src="https://github.com/user-attachments/assets/01a175e7-33d6-4978-909b-9f3d2825b1d9" />
+    <img width="600" src="https://github.com/user-attachments/assets/be31c1f9-a7cf-4cd7-8d7b-b147ca044204" />
+    
+### Data Augmentation (Group 4)
++ 변환이 완료된 YOLO 데이터셋을 읽어와 증강을 수행하며, 이미지와 라벨을 학습에 바로 사용할 수 있는 구조로 자동 저장합니다.
++ 설정 변경
+  + make_aug_image_4.py 파일을 열어 다음 옵션을 수정하여 증강 모드를 설정할 수 있습니다.
+  ```python
+    # 옵션 예시
+    aug_type = "rain"      # "rain", "snow", 또는 None (단순 복사)
+    n_aug_per_image = 2.3  # 이미지당 생성할 증강 개수 (기본 2장 + 30% 확률로 1장 추가)
+    ```
++ 증강 스크립트 실행
+  ```bash
+  python3 make_aug_image_4.py
+  ```
++ 출력 경로
+  + 증강된 데이터는 아래 경로에 저장되며, YOLO 학습에 즉시 사용 가능합니다.
+    ```
+    ./bdd100k_augmented/
+        ├── images/
+        └── labels/
+    ```
+    
+
+YOLO 라벨 형식은 다음과 같습니다:
+
+**주의사항**
+10K Images에는라벨 누락 이미지가 많아 학습 오류가 발생합니다.
+따라서 **100K Images + Labels 다운로드를 권장**합니다.
+
+
+
 # 3. Methodology
 
 ### 3.1 Model Selection
