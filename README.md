@@ -244,7 +244,7 @@ method="bleach"
     ```
     python3 yolo_noaug_train.py
     ```
-  + Group 2
+  + Group 3
     ```
     python3 yolo_aug_train.py
     ```
