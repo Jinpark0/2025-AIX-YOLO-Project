@@ -364,13 +364,13 @@ Night 조건에서의 성능 저하는 저조도 환경에서의 객체 검출�
 
 ## 6.2 Research Questions Revisited
 
-### RQ1: 도메인 불균형(날씨 조건별)이 객체 검출 성능에 얼마나 영향을 미치는가?
+### RQ1: 도메인 불균형이 객체 검출 성능에 얼마나 영향을 미치는가?
 
-데이터 불균형은 특히 소수 클래스(rain, snow)의 성능에 영향을 미쳤다. Group 1(불균형)에서 Group 2(균형)로 전환 시, day_rain에서 9.1%, day_snow에서 5.5%의 성능 향상이 관찰되었다. 이는 데이터 분포의 균형이 소수 조건에서의 검출 성능 향상에 직접적인 영향을 미친다는 것을 입증한다.
+도메인 불균형은 특히 소수 클래스(rain, snow)의 성능에 영향을 미쳤다. Group 1(불균형)에서 Group 2(균형)로 전환 시, day_rain에서 9.1%, day_snow에서 5.5%의 성능 향상이 관찰되었다. 이는 도메인의 균형이 소수 조건에서의 검출 성능 향상에 직접적인 영향을 미친다는 것을 입증한다.
 
 ### RQ2: Real balanced data vs Synthetic augmentation의 성능 차이는?
 
-Real balanced data가 synthetic augmentation보다 일관되게 우수한 성능을 보였다. Group 2(Real Balanced)는 Group 4(Balanced + Aug)보다 평균 11.6% 높은 mAP50을 달성하였다. 합성 데이터는 실제 데이터를 보완할 수 있으나, 완전히 대체할 수는 없다.
+Real balanced data가 synthetic augmentation보다 일관되게 우수한 성능을 보였다. Group 2(Real Balanced)는 Group 4(Balanced + Aug)보다 평균 11.6% 높은 mAP50을 달성하였다. 실험에 사용된 합성 데이터는 실제 데이터와의 괴리가 있으므로 학습에 이용하기 힘들다는 것을 알 수 있다.
 
 ## 6.3 Implications
 
@@ -382,7 +382,7 @@ Real balanced data가 synthetic augmentation보다 일관되게 우수한 성능
 
 ### 학술적 기여
 
-1. 환경 조건별 클래스 불균형 문제에 대한 체계적 실험 설계 제시
+1. 환경 조건별 도메인인 불균형 문제에 대한 체계적 실험 설계 제시
 2. Real data와 synthetic augmentation의 정량적 비교 근거 제공
 3. Weather augmentation의 한계점 실증적 확인
 
