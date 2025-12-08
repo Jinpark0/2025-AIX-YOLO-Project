@@ -497,7 +497,9 @@ Real balanced data가 synthetic augmentation보다 일관되게 우수한 성능
 ## 6.7 Contributors
 
 박지홍 : Albumentations parameter 분석, table 분석 후 보고서 작성
+
 심승환 : 데이터 전처리, 데이터 학습 및 테스트, 결과 보고
+
 최다예 : 코드 작성, Youtube recording, 보고서 검토
 
 ## 6.8 Youtube link
