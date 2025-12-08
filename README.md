@@ -230,7 +230,7 @@ method="bleach"
 
 ## 4.2 Analysis
 
-### 4.2.1 Yolov11n 모델의 robustness 
+### 4.2.1 Robustness 
 
 Real Balanced (Group 2)가 평균 mAP50 0.434로 가장 높은 성능을 기록하였습니다. 이는 Real Imbalanced (Group 1)의 0.426 대비 **1.9% 향상**된 수치입니다. 하지만 이 수치는 유의미한 차이를 보이지 않으며, 학습한 모델이 domain shift에 robust함을 나타냅니다.
 
