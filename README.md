@@ -121,7 +121,7 @@ Addressing domain imbalance in weather conditions for autonomous driving object 
     ```
     bdd_to_yolo/bdd100k_subset_filtered/
     ```
-### BBD100K → YOLO 포맷 변환
+### BDD100K → YOLO 포맷 변환
 ```bash
 cd bdd_to_yolo
 python3 converter.py
