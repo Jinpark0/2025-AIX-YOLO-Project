@@ -153,8 +153,8 @@ method="bleach"
 # 4. Evaluation & Analysis
 
 ### Evaluation Metrics
-- **Precision (P)**: 검출된 객체 중 실제 객체의 비율
-- **Recall (R)**: 실제 객체 중 검출된 객체의 비율
+- **Precision (P)**: 검출된 객체 중 정답 객체의 비율
+- **Recall (R)**: 정답 객체 중 검출된 객체의 비율
 - **mAP50**: IoU threshold 0.5에서의 mean Average Precision
 - **mAP50-95**: IoU threshold 0.5~0.95에서의 평균 mAP
 
