@@ -514,4 +514,4 @@ Real balanced data가 synthetic augmentation보다 일관되게 우수한 성능
 최다예 : 코드 작성, Youtube recording, 보고서 검토
 
 ## 6.8 Youtube link
-
+https://www.youtube.com/watch?v=wN0egQEqHlw
