@@ -455,7 +455,7 @@ Night 조건에서의 성능 저하는 저조도 환경에서의 객체 검출�
 
 **주요 발견:**
 
-1. **Yolov11n의 Robustness**: 균등하게 분배된 실제 데이터(Group 2)가 평균 mAP50 0.434로 최고 성능을 달성하였다. 이는 불균형 데이터(Group 1) 대비 1.9% 향상된 수치이다. 다만 이 차이는 통계적 유의성을 확신하기 어려운 수준으로, 본 모델이 전체적인 domain shift에 대해 비교적 robust한 특성을 보인다고 해석할 수 있다.
+1. **Yolov11n의 Robustness**: 균등하게 분배된 실제 데이터(Group 2)가 평균 mAP50 0.434로 최고 성능을 달성하였다. 이는 불균형 데이터(Group 1) 대비 1.9%p 향상된 수치이다. 다만 이 차이는 통계적 유의성을 확신하기 어려운 수준으로, 본 모델이 전체적인 domain shift에 대해 비교적 robust한 특성을 보인다고 해석할 수 있다.
 
 2. **Synthetic Augmentation의 한계**: Albumentations 기반 weather augmentation을 적용한 그룹(Group 3, 4)은 오히려 비적용 그룹보다 낮은 성능을 보였다. 이는 단순한 합성 날씨 효과가 실제 날씨 패턴의 복잡성과 분포를 충분히 모사하지 못해, feature 왜곡 및 domain gap을 유발할 수 있음을 시사한다.
    
@@ -466,7 +466,7 @@ Night 조건에서의 성능 저하는 저조도 환경에서의 객체 검출�
 
 ### RQ1: 도메인 불균형이 객체 검출 성능에 얼마나 영향을 미치는가?
 
-도메인 불균형은 특히 소수 조건(rain, snow)에서의 성능에 뚜렷한 영향을 미쳤다. Group 1(불균형)에서 Group 2(균형)로 전환 시, day_rain에서 9.1%, day_snow에서 5.5%의 성능 향상이 관찰되었다. 이는 도메인 분포를 균형화하는 것이 소수 조건에서의 검출 성능 향상에 직접적으로 기여할 수 있음을 보여준다. 한편, 전체 평균 mAP50에서는 Group 1과 Group 2의 차이가 1.9%p에 그쳐, 본 설정에서 도메인 균형화가 전반적인 성능을 극적으로 끌어올리지는 못했음을 확인하였다.
+도메인 불균형은 특히 소수 조건(rain, snow)에서의 성능에 뚜렷한 영향을 미쳤다. Group 1(불균형)에서 Group 2(균형)로 전환 시, day_rain에서 9.1%p, day_snow에서 5.5%p의 성능 향상이 관찰되었다. 이는 도메인 분포를 균형화하는 것이 소수 조건에서의 검출 성능 향상에 직접적으로 기여할 수 있음을 보여준다. 한편, 전체 평균 mAP50에서는 Group 1과 Group 2의 차이가 1.9%p에 그쳐, 본 설정에서 도메인 균형화가 전반적인 성능을 극적으로 끌어올리지는 못했음을 확인하였다.
 
 ### RQ2: Real balanced data vs Synthetic augmentation의 성능 차이는?
 
@@ -511,7 +511,8 @@ Real balanced data가 synthetic augmentation보다 일관되게 우수한 성능
 
 심승환 : 데이터 전처리, 데이터 학습 및 테스트, 결과 보고
 
-최다예 : 코드 작성, Youtube recording, 보고서 검토
+최다예 : 코드 작성, Youtube recording, 결과 분석 및 보고서 검토
 
 ## 6.8 Youtube link
-https://www.youtube.com/watch?v=wN0egQEqHlw
+https://youtube.com/watch?v=3ZfX6fiO7jI&si=PWXDCF7uTEYTr1kZ
+
