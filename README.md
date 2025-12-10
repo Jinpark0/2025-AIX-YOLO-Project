@@ -490,7 +490,7 @@ Real balanced data가 synthetic augmentation보다 일관되게 우수한 성능
 
 1. **모델 다양성 부족**: YOLOv11n 단일 모델로만 실험하여 다른 아키텍처에서의 일반화 검증 필요
 2. **Augmentation 기법 제한**: Albumentations의 기본 날씨 효과만 사용하였으며, GAN 기반 등 고급 기법 미적용
-3. **테스트셋 크기**: 조건별 200장으로 통계적 변동성이 존재할 수 있음
+3. **테스터셋 크기**: 조건별 200장으로 통계적 변동성이 존재할 수 있음
 4. **Night_rain 이상치**: 예상과 다른 결과에 대한 심층 분석 필요
 
 ## 6.5 Future Work
