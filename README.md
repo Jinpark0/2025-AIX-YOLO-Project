@@ -455,22 +455,22 @@ Night 조건에서의 성능 저하는 저조도 환경에서의 객체 검출�
 
 **주요 발견:**
 
-1. **Yolov11n의 Robustness**: 균등하게 분배된 실제 데이터(Group 2)가 평균 mAP50 0.434로 최고 성능을 달성하였다. 이는 불균형 데이터(Group 1) 대비 1.9% 향상된 수치이다. 하지만 이 수치는 유의미한 차이를 보이지 않으므로 학습 모델은 domain shift에 robust하다는 것을 알 수있다.
+1. **Yolov11n의 Robustness**: 균등하게 분배된 실제 데이터(Group 2)가 평균 mAP50 0.434로 최고 성능을 달성하였다. 이는 불균형 데이터(Group 1) 대비 1.9% 향상된 수치이다. 다만 이 차이는 통계적 유의성을 확신하기 어려운 수준으로, 본 모델이 전체적인 domain shift에 대해 비교적 robust한 특성을 보인다고 해석할 수 있다.
 
-2. **Synthetic Augmentation의 한계**: Albumentations의 weather augmentation은 오히려 성능을 저하시켰다. 이는 합성 날씨 효과가 실제 날씨 패턴의 복잡성을 충분히 모사하지 못함을 시사한다.
-
-3. **Real Data의 대체 불가성**: 어떤 augmentation 전략도 실제 균형 데이터의 성능에 도달하지 못했다. 이는 adverse weather 조건에서의 성능 향상을 위해서는 실제 데이터 수집이 필수적임을 의미한다.
+2. **Synthetic Augmentation의 한계**: Albumentations 기반 weather augmentation을 적용한 그룹(Group 3, 4)은 오히려 비적용 그룹보다 낮은 성능을 보였다. 이는 단순한 합성 날씨 효과가 실제 날씨 패턴의 복잡성과 분포를 충분히 모사하지 못해, feature 왜곡 및 domain gap을 유발할 수 있음을 시사한다.
+   
+3. **Real Data의 대체 불가성**: 어떤 augmentation 전략도 실제 균형 데이터(Group 2)의 성능에 도달하지 못했다. 특히 adverse weather 조건에서의 성능 향상을 위해서는, 단순 합성 데이터만으로는 한계가 있으며 실제 데이터 수집에 대한 투자가 필수적임을 보여준다.
+   
 
 ## 6.2 Research Questions Revisited
 
 ### RQ1: 도메인 불균형이 객체 검출 성능에 얼마나 영향을 미치는가?
 
-도메인 불균형은 특히 소수 클래스(rain, snow)의 성능에 영향을 미쳤다. Group 1(불균형)에서 Group 2(균형)로 전환 시, day_rain에서 9.1%, day_snow에서 5.5%의 성능 향상이 관찰되었다. 이는 도메인의 균형이 소수 조건에서의 검출 성능 향상에 직접적인 영향을 미친다는 것을 입증한다.
-하지만 이 모델에서는 Group1과 Group2간의 mAP가 크게 유의미한 차이가 나지 않음을 알 수 있었다.
+도메인 불균형은 특히 소수 조건(rain, snow)에서의 성능에 뚜렷한 영향을 미쳤다. Group 1(불균형)에서 Group 2(균형)로 전환 시, day_rain에서 9.1%, day_snow에서 5.5%의 성능 향상이 관찰되었다. 이는 도메인 분포를 균형화하는 것이 소수 조건에서의 검출 성능 향상에 직접적으로 기여할 수 있음을 보여준다. 한편, 전체 평균 mAP50에서는 Group 1과 Group 2의 차이가 1.9%p에 그쳐, 본 설정에서 도메인 균형화가 전반적인 성능을 극적으로 끌어올리지는 못했음을 확인하였다.
 
 ### RQ2: Real balanced data vs Synthetic augmentation의 성능 차이는?
 
-Real balanced data가 synthetic augmentation보다 일관되게 우수한 성능을 보였다. Group 2(Real Balanced)는 Group 4(Balanced + Aug)보다 평균 11.6% 높은 mAP50을 달성하였다. 단순 합성 데이터는 실제 데이터와의 괴리가 있으므로 학습에 이용하기 힘들다는 것을 알 수 있다.
+Real balanced data가 synthetic augmentation보다 일관되게 우수한 성능을 보였다. Group 2(Real Balanced)는 Group 4(Balanced + Aug)보다 평균 11.6%p 높은 mAP50을 달성하였다. 단순 합성 데이터는 실제 데이터와의 괴리가 있으므로 학습에 이용하기 힘들다는 것을 알 수 있다.
 
 ## 6.3 Implications
 
